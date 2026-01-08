@@ -1,3 +1,8 @@
+## v3.0.1
+
+- 🚀 Merge FatcherResponse using proxy and state
+- 🚀 Throw error when call `next()` many times
+
 ## v3.0.0
 
 - 🚀 Support Named Middleware and Functional Middleware
