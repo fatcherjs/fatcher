@@ -1,5 +1,10 @@
-import { attach } from './attach';
-import { FatcherContext, FatcherFunctionalMiddleware, FatcherResponse } from './types';
+import { buildFatcherResponse } from './buildFatcherResponse';
+import {
+  FatcherContext,
+  FatcherFunctionalMiddleware,
+  FatcherResponse,
+  FatcherResponseState,
+} from './types';
 
 /**
  * Compose middlewares to a higher-order function.
@@ -30,8 +35,8 @@ export function composeMiddlewares(middlewares: FatcherFunctionalMiddleware[]) {
   return function use(init: FatcherContext) {
     let currentIndex = -1;
 
-    let response: Response;
-
+    let response: FatcherResponse;
+    const state: FatcherResponseState = Object.create(null);
     let context: FatcherContext = init;
 
     async function dispatch(
@@ -55,7 +60,7 @@ export function composeMiddlewares(middlewares: FatcherFunctionalMiddleware[]) {
       }
 
       const newResponse = await middleware(context, async _ => dispatch(index + 1, _));
-      response = attach(newResponse, response);
+      response = newResponse !== response ? buildFatcherResponse(newResponse, state) : newResponse;
       return response;
     }
 

@@ -1,6 +1,8 @@
 /* eslint-disable no-use-before-define */
 export interface FatcherResponse extends Response {}
 
+export type FatcherResponseState = Record<PropertyKey, any>;
+
 export type FatcherMiddlewares = (
   | FatcherFunctionalMiddleware
   | FatcherMiddleware
