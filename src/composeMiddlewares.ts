@@ -44,7 +44,7 @@ export function composeMiddlewares(middlewares: FatcherFunctionalMiddleware[]) {
       patch?: Partial<FatcherContext>,
     ): Promise<FatcherResponse> {
       if (index <= currentIndex) {
-        return response;
+        throw new Error('next() called multiple times');
       }
 
       currentIndex = index;

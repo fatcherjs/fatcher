@@ -14,19 +14,17 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 describe('Middleware', () => {
-  it('Middleware can call next lot of times, but get same response', async () => {
-    const response = await fatcher('https://foo.bar/get', {
-      middlewares: [
-        defineMiddleware(async (req, next) => {
-          const res1 = await next();
-          const res2 = await next();
-
-          expect(res1).toBe(res2);
-          return res1;
-        }),
-      ],
-    });
-
-    expect(response.status).toBe(200);
+  it('Middleware calling next() multiple times should throw', async () => {
+    await expect(
+      fatcher('https://foo.bar/get', {
+        middlewares: [
+          defineMiddleware(async (_ctx, next) => {
+            const res = await next();
+            await next(); // ❌ illegal
+            return res;
+          }),
+        ],
+      }),
+    ).rejects.toThrow(/multiple times/i);
   });
 });
