@@ -1,3 +1,7 @@
+## v3.0.2
+
+- 🗑️ Revert Proxy Impl
+
 ## v3.0.1
 
 - 🚀 Merge FatcherResponse using proxy and state
