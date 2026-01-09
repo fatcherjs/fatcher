@@ -269,13 +269,15 @@ const transformedFile = await response.getMp4();
 
 ## Packages
 
-- [@fatcherjs/middleware-aborter](https://github.com/fatcherjs/middleware-aborter)
-- [@fatcherjs/middleware-cache](https://github.com/fatcherjs/middleware-cache)
-- [@fatcherjs/middleware-form-data](https://github.com/fatcherjs/middleware-form-data)
-- [@fatcherjs/middleware-json](https://github.com/fatcherjs/middleware-json)
-- [@fatcherjs/middleware-parameter](https://github.com/fatcherjs/middleware-parameter)
-- [@fatcherjs/middleware-progress](https://github.com/fatcherjs/middleware-progress)
-- [@fatcherjs/middleware-exception](https://github.com/fatcherjs/middleware-exception)
+| Package                                                                              | Version                                                               |
+| ------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| [@fatcherjs/middleware-aborter](https://github.com/fatcherjs/middleware-aborter)     | ![](https://img.shields.io/npm/v/@fatcherjs/middleware-aborter.svg)   |
+| [@fatcherjs/middleware-cache](https://github.com/fatcherjs/middleware-cache)         | ![](https://img.shields.io/npm/v/@fatcherjs/middleware-cache.svg)     |
+| [@fatcherjs/middleware-form-data](https://github.com/fatcherjs/middleware-form-data) | ![](https://img.shields.io/npm/v/@fatcherjs/middleware-form-data.svg) |
+| [@fatcherjs/middleware-json](https://github.com/fatcherjs/middleware-json)           | ![](https://img.shields.io/npm/v/@fatcherjs/middleware-json.svg)      |
+| [@fatcherjs/middleware-parameter](https://github.com/fatcherjs/middleware-parameter) | ![](https://img.shields.io/npm/v/@fatcherjs/middleware-parameter.svg) |
+| [@fatcherjs/middleware-progress](https://github.com/fatcherjs/middleware-progress)   | ![](https://img.shields.io/npm/v/@fatcherjs/middleware-progress.svg)  |
+| [@fatcherjs/middleware-exception](https://github.com/fatcherjs/middleware-exception) | ![](https://img.shields.io/npm/v/@fatcherjs/middleware-exception.svg) |
 
 ## License
 
